@@ -42,7 +42,7 @@ public class Main {
         Catalog newCatalog = mainInstance.testLoadCatalog();
         System.out.println(newCatalog.toString());
 
-        mainInstance.testViewDocument(docWithoutTags);
+        mainInstance.testViewDocument(docFiiTimeTable);
     }
 
     //Incerc sa salvez un Catalog, iar daca este aruncata o eroare o prind si afisez mesajul corespunzator
