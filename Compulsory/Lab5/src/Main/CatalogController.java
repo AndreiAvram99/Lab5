@@ -20,7 +20,7 @@ public class CatalogController {
 
     /**
      * Mai intai folosim FileOutputStream petru a scrie intr-un fisier dat ca parametru
-     * apoi folosim ObjectOutputStream pentru a putea scrie obiecte
+     * apoi folosim ObjectOutputStream pentru a serializa si a putea scrie obiecte
      * iar cand se apeleaza metoda .writeObject() obiectul este serializat (converitit la byteStream) incarcat in fisier
      *
      * @param catalog
@@ -35,9 +35,9 @@ public class CatalogController {
     }
 
     /**
-     * Mai intai folosim FileInputStream petru a citi dintr-un fisier dat ca parametru
-     * apoi folosim ObjectInputStream pentru a putea citi obiecte
-     * iar cand se apeleaza metoda .readObject() obiectul este deserializat si pus in instanta obj a lui Object
+     * Mai intai folosim FileInputStream(clasa ce se ocupa de fisierele de citire) petru a citi dintr-un fisier dat ca parametru
+     * apoi folosim ObjectInputStream pentru a putea citi obiecte(sa le deserializeze)
+     * iar cand se apeleaza metoda .readObject() se citeste din fisier obiectul, este deserializat si pus in instanta obj a lui Object
      * la final se casteaza la tipul de data returnat (Catalog)
      *
      * @param path
@@ -68,7 +68,7 @@ public class CatalogController {
      * apoi folosind metoda .browse(); deschid fisierul sau pornesc o aplicatie asociata la URI-ul respecitv
      *
      * Daca fisierul nu este gasit se arunca o exceptie pentru ca ruta("path-ul") nu este corecta apoi este prinsa si
-     * se afiseaza mesajjul specific
+     * se afiseaza mesajul specific
      * @param doc
      */
     public static void view(Document doc)
